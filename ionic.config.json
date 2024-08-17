@@ -1,0 +1,7 @@
+{
+  "name": "LoginAndSignup",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
