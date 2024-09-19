@@ -1,0 +1,47 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height:100vh;
+}
+
+.secundario {
+    width: 100vh;
+}
+
+ion-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 7%;
+    text-align: end;
+}    
+
+ion-input {
+    max-width: 90%;
+    margin: 2% auto;
+}
+
+.info {
+    margin-left: 90%;
+}
+
+.boton-primario {
+    
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #b9b9b956;
+    
+    --ripple-color: #88f4be;
+    
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    
+    min-width: 10em;
+    min-height: 3em;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}

@@ -1,0 +1,48 @@
+<ion-content fullscreen="true">
+  <!-- Boton Retroceso -->
+  <ion-button size="large" fill="clear" shape="round" slot="fixed" [routerLink]="['../login']">
+    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+  </ion-button>
+  <div class="content">
+    <div class="secundario">
+      <!-- Logo -->
+      <ion-img src="../../../assets/icon/image.png" alt="logo" />
+
+      <!-- Titulo -->
+      <ion-title color="primary">Recuperar Cuenta</ion-title>
+
+      <!-- Formulario de inicio de Sesión -->
+       <form [formGroup]="recuperar">
+        <!-- Correo a recuperar -->
+        <ion-input
+          type="email"
+          formControlName="email"
+          fill="outline"
+          inputmode="email"
+          label="Correo"
+          labelPlacement="floating"
+          placeholder="Ej: usuario@mail.com"
+          errorText="Correo inválido"
+          shape="round"
+          autocomplete="email"
+          email
+          required
+        ></ion-input>
+
+        <!-- Ingresar -->
+        <div class="fin">
+          <ion-button
+            shape="round"
+            type="button"
+            [disabled]="recuperar.invalid"
+            (click)="recuperar.valid && recuperarPassword()"
+            class="boton-primario ion-text-lg"
+          >
+            Acceder
+          </ion-button>
+        </div>
+       </form>
+      
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-content [fullscreen]="true">
+  <div class="content">
+    <div class="secundario">
+      <!-- Logo -->
+      <ion-img src="../../../assets/icon/image.png" alt="logo" />
+
+      <!-- Titulo -->
+      <ion-title color="primary">Iniciar Sesión</ion-title>
+
+      <!-- Formulario de inicio de Sesión -->
+      <form [formGroup]="loginForm">
+        <!-- Correo -->
+        <ion-input
+          type="email"
+          formControlName="email"
+          fill="outline"
+          inputmode="email"
+          label="Correo"
+          labelPlacement="floating"
+          placeholder="Ej: usuario@mail.com"
+          errorText="Correo inválido"
+          shape="round"
+          autocomplete="email"
+          email
+          required
+        />
+
+        <!-- Contraseña -->
+        <ion-input
+          type="password"
+          formControlName="password"
+          fill="outline"
+          label="Contraseña"
+          labelPlacement="floating"
+          placeholder="Ingrese su contraseña"
+          errorText="Debe ingresar la contraseña"
+          shape="round"
+          autocomplete="current-password"
+          password
+          required
+        />
+
+        <!-- Ir a la página de Olvidé mi contraseña -->
+        <div class="olvide">
+          <ion-label>
+            <a [routerLink]="['../recuperar']">Olvidé mi contraseña</a>
+          </ion-label>
+        </div>
+
+        <!-- Ingresar -->
+        <div class="fin">
+          <ion-button
+            shape="round"
+            type="button"
+            [disabled]="loginForm.invalid"
+            (click)="loginForm.valid && login()"
+            class="ion-text-lg"
+          >
+            Acceder
+          </ion-button>
+        </div>
+      </form>
+
+      <div class="fin fin-2">
+        <!-- Ir a crear una cuenta -->
+        <ion-label>
+          <a [routerLink]="['../signup']">No tengo una cuenta</a>
+        </ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>

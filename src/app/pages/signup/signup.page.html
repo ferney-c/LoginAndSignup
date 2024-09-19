@@ -1,0 +1,119 @@
+<ion-content>
+  <!-- Boton Retroceso -->
+  <ion-button
+    size="large"
+    fill="clear"
+    shape="round"
+    slot="fixed"
+    [routerLink]="['../login']"
+  >
+    <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+  </ion-button>
+  <div class="content">
+    <div class="secundario">
+      <!-- Logo -->
+      <ion-img src="../../../assets/icon/image.png" alt="logo" />
+
+      <!-- Titulo -->
+      <ion-title color="primary">Registrarse</ion-title>
+
+      <!-- Formulario para Registrarse -->
+      <form [formGroup]="signupForm">
+        <!-- Nombre Completo -->
+        <ion-input
+          type="text"
+          formControlName="name"
+          fill="outline"
+          inputmode="text"
+          label="Nombre Completo"
+          labelPlacement="floating"
+          placeholder="Ej: Juan Pérez"
+          shape="round"
+          autocomplete="name"
+          required
+        />
+        <!-- Correo -->
+        <ion-input
+          type="email"
+          formControlName="email"
+          fill="outline"
+          inputmode="email"
+          label="Correo"
+          labelPlacement="floating"
+          placeholder="Ej: usuario@mail.com"
+          errorText="Correo inválido"
+          shape="round"
+          autocomplete="email"
+          email
+          required
+        />
+        <!-- Teléfono -->
+        <ion-input
+          type="tel"
+          formControlName="phone"
+          fill="outline"
+          inputmode="tel"
+          label="Telefono"
+          labelPlacement="floating"
+          placeholder="Ej: 3000000000"
+          errorText="Telefono inválido"
+          shape="round"
+          autocomplete="tel"
+          minlength="10"
+          maxlength="10"
+          required
+        />
+
+        <!-- Contraseña -->
+        <ion-input
+          type="password"
+          formControlName="password"
+          fill="outline"
+          label="Contraseña"
+          labelPlacement="floating"
+          placeholder="Ingrese su contraseña"
+          shape="round"
+          autocomplete="new-password"
+          minlength="8"
+          required
+        />
+
+        <!-- Info para la contraseña deseada -->
+        <a *ngIf="signupForm.get('password')!.invalid" class="info" (click)="info()">
+          <ion-icon
+            color="danger"
+            slot="icon-only"
+            name="information-circle-outline"
+          />
+        </a>
+      </form>
+
+      @if (!isSignup) {
+        <div class="boton">
+          <!-- Registrarse -->
+          <ion-button
+            shape="round"
+            type="button"
+            [disabled]="signupForm.invalid"
+            (click)="signupForm.valid && signup()"
+            class="boton-primario ion-text-lg"
+          >
+            Registrarse
+          </ion-button>
+        </div>
+      } @else {
+        <div class="boton">
+          <!-- Registrarse -->
+          <ion-button
+            shape="round"
+            type="button"
+            class="boton-primario ion-text-lg"
+          >
+            <ion-spinner name="crescent"></ion-spinner>
+          </ion-button>
+        </div>
+      }
+
+    </div>
+  </div>
+</ion-content>
