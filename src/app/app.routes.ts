@@ -4,7 +4,7 @@ export const routes: Routes = [
   // Ruta predeterminada
   {
     path: '',
-    redirectTo: 'signup',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {

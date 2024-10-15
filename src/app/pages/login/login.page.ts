@@ -18,6 +18,7 @@ import {
 } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { Auth2Service } from 'src/app/services/auth2/auth2.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -45,7 +46,8 @@ export class LoginPage implements OnInit {
 
   isLogin = false; 
 
-  private authService = inject(Auth2Service);
+  // private authService = inject(Auth2Service);
+  private authService = inject(AuthService);
   
   ngOnInit() {
     /* Inincializamos el formulario */

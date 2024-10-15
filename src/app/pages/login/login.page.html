@@ -39,27 +39,27 @@
           password
           required
         />
-
-        <!-- Ir a la página de Olvidé mi contraseña -->
-        <div class="olvide">
-          <ion-label>
-            <a [routerLink]="['../recuperar']">Olvidé mi contraseña</a>
-          </ion-label>
-        </div>
-
-        <!-- Ingresar -->
-        <div class="fin">
-          <ion-button
-            shape="round"
-            type="button"
-            [disabled]="loginForm.invalid"
-            (click)="loginForm.valid && login()"
-            class="ion-text-lg"
-          >
-            Acceder
-          </ion-button>
-        </div>
       </form>
+
+      <!-- Ir a la página de Olvidé mi contraseña -->
+      <div class="olvide">
+        <ion-label>
+          <a [routerLink]="['../recuperar']">Olvidé mi contraseña</a>
+        </ion-label>
+      </div>
+
+      <!-- Ingresar -->
+      <div class="fin">
+        <ion-button
+          shape="round"
+          type="button"
+          [disabled]="loginForm.invalid"
+          (click)="loginForm.valid && login()"
+          class="ion-text-lg"
+        >
+          Acceder
+        </ion-button>
+      </div>
 
       <div class="fin fin-2">
         <!-- Ir a crear una cuenta -->

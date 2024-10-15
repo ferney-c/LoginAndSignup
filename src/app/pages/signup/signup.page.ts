@@ -73,8 +73,8 @@ export class SignupPage implements OnInit {
   ngOnInit() {
     /* Inincializamos el formulario */
     this.signupForm = new FormGroup({
-      name: new FormControl(''),
-      email: new FormControl(''),
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[0-9]{10}$/),
@@ -84,6 +84,7 @@ export class SignupPage implements OnInit {
         Validators.minLength(8),
         Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/),
       ]),
+      password_confirmation: new FormControl('', [Validators.required]),
     });
     /* F3rn3y16 */
     

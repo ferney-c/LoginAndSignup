@@ -11,8 +11,10 @@
   </ion-button>
   <div class="content">
     <div class="secundario">
-      <!-- Logo -->
-      <ion-img src="../../../assets/icon/image.png" alt="logo" />
+      <div class="logo">
+        <!-- Logo -->
+        <ion-img src="../../../assets/icon/image.png" alt="logo" />
+      </div>
 
       <!-- Titulo -->
       <ion-title color="primary">Registrarse</ion-title>
@@ -78,8 +80,26 @@
           required
         />
 
+        <!-- Confirmar Contraseña -->
+        <ion-input
+          type="password"
+          formControlName="password_confirmation"
+          fill="outline"
+          label="Confirmar Contraseña"
+          labelPlacement="floating"
+          placeholder="Ingrese su contraseña"
+          shape="round"
+          autocomplete="current-password"
+          minlength="8"
+          required
+        />
+
         <!-- Info para la contraseña deseada -->
-        <a *ngIf="signupForm.get('password')!.invalid" class="info" (click)="info()">
+        <a
+          *ngIf="signupForm.get('password')!.invalid"
+          class="info"
+          (click)="info()"
+        >
           <ion-icon
             color="danger"
             slot="icon-only"
@@ -89,31 +109,30 @@
       </form>
 
       @if (!isSignup) {
-        <div class="boton">
-          <!-- Registrarse -->
-          <ion-button
-            shape="round"
-            type="button"
-            [disabled]="signupForm.invalid"
-            (click)="signupForm.valid && signup()"
-            class="boton-primario ion-text-lg"
-          >
-            Registrarse
-          </ion-button>
-        </div>
+      <div class="boton">
+        <!-- Registrarse -->
+        <ion-button
+          shape="round"
+          type="button"
+          [disabled]="signupForm.invalid"
+          (click)="signupForm.valid && signup()"
+          class="boton-primario ion-text-lg"
+        >
+          Registrarse
+        </ion-button>
+      </div>
       } @else {
-        <div class="boton">
-          <!-- Registrarse -->
-          <ion-button
-            shape="round"
-            type="button"
-            class="boton-primario ion-text-lg"
-          >
-            <ion-spinner name="crescent"></ion-spinner>
-          </ion-button>
-        </div>
+      <div class="boton">
+        <!-- Registrarse -->
+        <ion-button
+          shape="round"
+          type="button"
+          class="boton-primario ion-text-lg"
+        >
+          <ion-spinner name="crescent"></ion-spinner>
+        </ion-button>
+      </div>
       }
-
     </div>
   </div>
 </ion-content>
